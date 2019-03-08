@@ -1,10 +1,14 @@
 {
   "extends": ["airbnb", "prettier"],
+  "parser": "babel-eslint",
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "global-require": "off",
+    "no-console": "off",
+    "import/no-named-as-default": "off"
   }
 }
