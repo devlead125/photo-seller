@@ -3,13 +3,13 @@ import Card from './Card';
 import View from './View';
 import Text from './Text';
 
-export class Detail extends Component {
+export class TitleDetailCard extends Component {
   render() {
-    const { name, detail, extra } = this.props;
+    const { title, detail, extra, ...props } = this.props;
     return (
-      <Card px={25} py={17} flexDirection="row" alignItems="center" {...this.props}>
+      <Card px={25} py={17} flexDirection="row" alignItems="center" {...props}>
         <View>
-          <Text>{name}</Text>
+          <Text>{title}</Text>
           <Text fontSize={12} color="grey">
             {detail}
           </Text>
@@ -20,4 +20,4 @@ export class Detail extends Component {
   }
 }
 
-export default Card;
+export default TitleDetailCard;

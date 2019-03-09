@@ -7,7 +7,11 @@ import Text from '../../components/Text';
 import TouchableOpacity from '../../components/TouchableOpacity';
 import RetweetSmall from '../../icons/RetweetSmall';
 import Close from '../../icons/Close';
+import Add from '../../icons/Add';
 import Button from '../../components/Button';
+import ChevronLeft from '../../icons/ChevronLeft';
+import Adjust from '../../icons/Adjust';
+import TitleDetailCard from '../../components/TitleDetailCard';
 
 const photos = [
   {
@@ -58,6 +62,12 @@ const packs = [
 ];
 
 export class SelectPackages extends Component {
+  static navigationOptions = {
+    title: 'Select Packages',
+    headerLeft: <ChevronLeft marginLeft={25} />,
+    headerRight: <Adjust marginRight={25} />
+  };
+
   state = {
     packIndex: 0,
     tabIndex: 0
@@ -136,6 +146,24 @@ export class SelectPackages extends Component {
                 Individual
               </Button>
             </View>
+            {tabIndex === 0 ? (
+              <>
+                <Text mt={25} fontSize={24}>
+                  Package Options
+                </Text>
+                <Text color="grey" fontSize={18}>
+                  Select 1 or multiple packages
+                </Text>
+                <TitleDetailCard
+                  title="Photo Package 1"
+                  detail="[x2] 8X6 [x2] 7X5"
+                  elevation={0}
+                  extra={<Add />}
+                />
+              </>
+            ) : (
+              <></>
+            )}
           </View>
         </View>
       </ScrollView>
