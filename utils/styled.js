@@ -40,6 +40,7 @@ export const flex = props => css`
 
 export const position = props => css`
   ${props.position && `position: ${props.position};`}
+  ${props.zIndex && `z-index: ${props.zIndex};`}
   ${props.top && `top: ${convert(props.top)};`}
   ${props.right && `right: ${convert(props.right)};`}
   ${props.bottom && `bottom: ${convert(props.bottom)};`}
