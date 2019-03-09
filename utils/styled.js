@@ -62,7 +62,7 @@ export const border = props => css`
   ${props.borderBottom != null && `border-bottom-width: ${props.borderBottom}px;`}
   ${props.borderLeft != null && `border-left-width: ${props.borderLeft}px;`}
   ${props.border != null && `border-width: ${props.border}px;`}
-  ${props.borderRadius != null && `border-radius: ${props.borderRadius}px;`}
+  ${props.borderRadius != null && `border-radius: ${props.borderRadius};`}
   ${props.borderStyle != null && `border-style: ${props.borderStyle};`}
 `;
 

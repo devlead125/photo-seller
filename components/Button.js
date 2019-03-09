@@ -1,30 +1,35 @@
 import React from 'react';
-import { TouchableOpacity, ActivityIndicator } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import Text from './Text';
-import View from './View';
+import TouchableOpacity from './TouchableOpacity';
 
-const Button = ({ children, fontSize, color, onPress, loading, py, ...rest }) => {
+const Button = ({ children, fontSize, color, fontWeight, onPress, loading, ...props }) => {
   return (
-    <View {...rest}>
-      <TouchableOpacity onPress={onPress} disabled={loading}>
-        <View py={py} flexDirection="row" justifyContent="center">
-          {loading && <ActivityIndicator size="small" color={color} />}
-          <Text fontSize={fontSize} color={color} alignItems="center">
-            {children}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      onPress={onPress}
+      disabled={loading}
+      flexDirection="row"
+      justifyContent="center"
+      activeOpacity={0.5}
+      {...props}
+    >
+      {loading && <ActivityIndicator size="small" color={color} />}
+      <Text fontSize={fontSize} color={color} fontWeight={fontWeight} alignItems="center">
+        {children}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
 Button.defaultProps = {
-  fontSize: 19,
-  bg: '#26A9FF',
+  fontSize: 14,
+  fontWeight: 'bold',
+  bg: 'primary',
   color: 'white',
-  borderColor: '#26A9FF',
+  borderColor: 'primary',
   border: 1,
-  borderRadius: 4
+  py: 9,
+  borderRadius: 100
 };
 
 export default Button;

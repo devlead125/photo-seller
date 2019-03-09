@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
+import { Icon } from 'expo';
+import PropTypes from 'prop-types';
 import View from '../../components/View';
 import TouchableOpacity from '../../components/TouchableOpacity';
 import Card from '../../components/Card';
@@ -9,6 +11,9 @@ import ChevronLeft from '../../icons/ChevronLeft';
 import Adjust from '../../icons/Adjust';
 import Picture from '../../icons/Picture';
 import Retweet from '../../icons/Retweet';
+import Button from '../../components/Button';
+import theme from '../../theme';
+import AddCustomerModal from './AddCustomerModal';
 
 const imgs = [require('../../assets/1.png'), require('../../assets/2.png')];
 
@@ -39,11 +44,12 @@ export class ConfirmOrder extends Component {
 
   state = {
     imgIndex: 0,
-    packIndex: 0
+    packIndex: 0,
+    modalVisible: false
   };
 
   render() {
-    const { imgIndex, packIndex } = this.state;
+    const { imgIndex, packIndex, modalVisible } = this.state;
     return (
       <ScrollView flex={1}>
         <View flexDirection="row">
@@ -134,8 +140,37 @@ export class ConfirmOrder extends Component {
                 <Text>$15.00</Text>
               </View>
             </View>
+            <View mx={27} mt={19} flexDirection="row">
+              <Text fontWeight="bold" fontSize={24}>
+                Total
+              </Text>
+              <Text fontWeight="bold" fontSize={24}>
+                $96.00
+              </Text>
+            </View>
+            <Card px={26} py={24} mt={19} alignItems="center" flexDirection="row">
+              <Text fontSize={18} color="grey">
+                Add Customer
+              </Text>
+              <TouchableOpacity
+                activeOpacity={0.5}
+                onPress={() => this.setState({ modalVisible: true })}
+              >
+                <Icon.SimpleLineIcons name="plus" color={theme.colors.grey} size={19} />
+              </TouchableOpacity>
+            </Card>
+            <View mt={35} flexDirection="row">
+              <Button flex={1}>PLACE</Button>
+              <Button flex={1} ml={8}>
+                SAVE
+              </Button>
+            </View>
           </View>
         </View>
+        <AddCustomerModal
+          isVisible={modalVisible}
+          onBackdropPress={() => this.setState({ modalVisible: false })}
+        />
       </ScrollView>
     );
   }

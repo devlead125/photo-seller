@@ -8,9 +8,12 @@
   },
   "dependencies": {
     "expo": "^32.0.0",
+    "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-extra-dimensions-android": "^1.2.1",
+    "react-native-modal": "^9.0.0",
     "react-native-shadow-cards": "^1.0.2",
     "react-native-status-bar-height": "^2.2.0",
     "react-navigation": "^3.3.2",

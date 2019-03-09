@@ -11,6 +11,7 @@
     "no-use-before-define": "off",
     "global-require": "off",
     "no-console": "off",
-    "import/no-named-as-default": "off"
+    "import/no-named-as-default": "off",
+    "react/forbid-foreign-prop-types": "off"
   }
 }
