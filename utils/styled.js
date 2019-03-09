@@ -39,12 +39,12 @@ export const flex = props => css`
 `;
 
 export const position = props => css`
-  ${props.position && `position: ${props.position};`}
-  ${props.zIndex && `z-index: ${props.zIndex};`}
-  ${props.top && `top: ${convert(props.top)};`}
-  ${props.right && `right: ${convert(props.right)};`}
-  ${props.bottom && `bottom: ${convert(props.bottom)};`}
-  ${props.left && `left: ${convert(props.left)};`}
+  ${props.position != null && `position: ${props.position};`}
+  ${props.zIndex != null && `z-index: ${props.zIndex};`}
+  ${props.top != null && `top: ${convert(props.top)};`}
+  ${props.right != null && `right: ${convert(props.right)};`}
+  ${props.bottom != null && `bottom: ${convert(props.bottom)};`}
+  ${props.left != null && `left: ${convert(props.left)};`}
 `;
 
 export const size = props => css`

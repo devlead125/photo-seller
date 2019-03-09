@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-native-slider';
+import { Icon } from 'expo';
 import Image from '../../components/Image';
 import View from '../../components/View';
 import ChevronLeft from '../../icons/ChevronLeft';
@@ -22,8 +23,25 @@ export class EditPhoto extends Component {
     return (
       <View flex={1}>
         <Image flex={1} source={require('../../assets/3.png')} />
-        <View position="absolute" alignSelf="center" bottom={47}>
-          <View w={324}>
+        <View position="absolute" alignSelf="center" alignItems="center" bottom={47}>
+          <View w={377} px={54} py={17} flexDirection="row">
+            <Icon.Entypo name="crop" color="white" size={27} />
+            <Icon.Feather name="sun" color={theme.colors.primary} size={27} />
+            <Icon.Feather name="search" color="white" size={27} />
+            <Icon.Ionicons name="ios-contrast" color="white" size={27} />
+            <Icon.MaterialCommunityIcons name="contrast-box" color="white" size={27} />
+            <View
+              position="absolute"
+              top={0}
+              right={0}
+              bottom={0}
+              left={0}
+              borderRadius={6}
+              bg="white"
+              style={{ opacity: 0.1 }}
+            />
+          </View>
+          <View w={324} mt={14}>
             <Slider
               value={value}
               onValueChange={value => this.setState({ value })}
