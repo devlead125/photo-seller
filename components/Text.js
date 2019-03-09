@@ -8,7 +8,8 @@ const Text = styled.Text`
 `;
 
 Text.defaultProps = {
-  fontSize: 15,
+  fontSize: 16,
+  fontFamily: 'nunito',
   color: 'black'
 };
 

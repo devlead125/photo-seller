@@ -11,7 +11,7 @@ const View = styled.View`
 `;
 
 View.defaultProps = {
-  justtifyContent: 'space-between'
+  justifyContent: 'space-between'
 };
 
 export default View;

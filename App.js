@@ -29,14 +29,15 @@ const AppContainer = createAppContainer(rootNavigator);
 
 export default class App extends React.Component {
   state = {
-    loading: false
+    loading: true
   };
 
   loadAssets = async () => {
     await Promise.all([
       Asset.loadAsync([require('./assets/1.png'), require('./assets/2.png')]),
       Font.loadAsync({
-        lato: require('./assets/lato.ttf')
+        lato: require('./assets/lato.ttf'),
+        nunito: require('./assets/nunito.ttf')
       })
     ]);
   };

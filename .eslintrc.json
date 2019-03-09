@@ -6,10 +6,11 @@
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/prop-types": ["error", { "ignore": ["navigation"] }],
     "no-use-before-define": "off",
     "global-require": "off",
     "no-console": "off",
-    "import/no-named-as-default": "off",
-    "react/prop-types": ["error", { "ignore": ["navigation"] }]
+    "import/no-named-as-default": "off"
   }
 }

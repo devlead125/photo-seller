@@ -1,9 +1,7 @@
-import { Card as BaseCard } from 'react-native-shadow-cards';
 import styled from 'styled-components';
 import { space, flex, position, size, border, color } from '../utils/styled';
 
-const Card = styled(BaseCard)`
-  overflow: hidden;
+const TouchableOpacity = styled.TouchableOpacity`
   ${space}
   ${flex}
   ${position}
@@ -12,9 +10,9 @@ const Card = styled(BaseCard)`
   ${color}
 `;
 
-Card.defaultProps = {
+TouchableOpacity.defaultProps = {
   justifyContent: 'space-between',
-  w: '100%'
+  activeOpacity: 1
 };
 
-export default Card;
+export default TouchableOpacity;
