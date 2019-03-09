@@ -64,6 +64,7 @@ export class FlagPhotos extends Component {
 
   render() {
     const { selected } = this.state;
+    const { navigation } = this.props;
     return (
       <View flex={1}>
         <ScrollView flex={1}>
@@ -94,7 +95,13 @@ export class FlagPhotos extends Component {
             ))}
           </View>
         </ScrollView>
-        <Button position="absolute" alignSelf="center" bottom={50} w={239} onPress={() => {}}>
+        <Button
+          position="absolute"
+          alignSelf="center"
+          bottom={50}
+          w={239}
+          onPress={() => navigation.navigate('SelectePackages')}
+        >
           SELECT PACKAGES
         </Button>
       </View>

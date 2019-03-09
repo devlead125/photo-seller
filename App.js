@@ -9,9 +9,9 @@ import theme from './theme';
 
 const rootNavigator = createStackNavigator(
   {
+    SelectPackages,
     FlagPhotos,
-    ConfirmOrder,
-    SelectPackages
+    ConfirmOrder
   },
   {
     defaultNavigationOptions: {

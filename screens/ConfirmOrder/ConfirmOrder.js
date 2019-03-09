@@ -52,7 +52,7 @@ export class ConfirmOrder extends Component {
     return (
       <ScrollView flex={1}>
         <View flexDirection="row">
-          <View flex={1} flexDirection="row" flexWrap="wrap" py={25} px={15}>
+          <View flex={2} flexDirection="row" flexWrap="wrap" py={25} px={15}>
             {imgs.map((img, index) => (
               <TouchableOpacity
                 key={Math.random()}
@@ -101,7 +101,7 @@ export class ConfirmOrder extends Component {
               </Card>
             </View>
           </View>
-          <View w={371} p={25} justifyContent="flex-start">
+          <View flex={1} p={25} justifyContent="flex-start">
             {packs.map(({ name, detail, price }, index) => (
               <TouchableOpacity
                 key={name}

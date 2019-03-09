@@ -29,6 +29,7 @@ Button.defaultProps = {
   borderColor: 'primary',
   border: 1,
   py: 9,
+  px: 20,
   borderRadius: 100
 };
 
