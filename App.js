@@ -1,6 +1,7 @@
 import React from 'react';
 import { Font, AppLoading, Asset } from 'expo';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { ThemeProvider } from 'styled-components';
 import ConfirmOrder from './screens/ConfirmOrder';
 import SelectPackages from './screens/SelectPackages';
 import theme from './theme';
@@ -51,6 +52,10 @@ export default class App extends React.Component {
         />
       );
     }
-    return <AppContainer />;
+    return (
+      <ThemeProvider theme={theme}>
+        <AppContainer />
+      </ThemeProvider>
+    );
   }
 }
