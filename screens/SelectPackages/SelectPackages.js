@@ -62,11 +62,25 @@ const packs = [
 ];
 
 export class SelectPackages extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: 'Select Packages',
-    headerLeft: <ChevronLeft marginLeft={25} />,
-    headerRight: <Adjust marginRight={25} />
-  };
+    headerLeft: (
+      <TouchableOpacity
+        ml={30}
+        activeOpacity={0.5}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <ChevronLeft />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity mr={30} activeOpacity={0.5}>
+        <Adjust />
+      </TouchableOpacity>
+    )
+  });
 
   state = {
     packIndex: 0,
@@ -81,11 +95,17 @@ export class SelectPackages extends Component {
         <View flexDirection="row">
           <View flex={2} flexDirection="row" flexWrap="wrap" py={25} px={15}>
             {photos.map(photo => (
-              <View key={photo.id} w="50%" px={10} mb={20}>
+              <TouchableOpacity
+                key={photo.id}
+                w="50%"
+                px={10}
+                mb={20}
+                onPress={() => navigation.navigate('EditPhoto')}
+              >
                 <Card w="100%" aspectRatio={1}>
                   <Image source={photo.image} w="100%" h="100%" />
                 </Card>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
           <View flex={1} p={25} justifyContent="flex-start">

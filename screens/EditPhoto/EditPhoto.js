@@ -6,13 +6,28 @@ import View from '../../components/View';
 import ChevronLeft from '../../icons/ChevronLeft';
 import Adjust from '../../icons/Adjust';
 import theme from '../../theme';
+import TouchableOpacity from '../../components/TouchableOpacity';
 
 export class EditPhoto extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: 'Edit Photo',
-    headerLeft: <ChevronLeft marginLeft={25} />,
-    headerRight: <Adjust marginRight={25} />
-  };
+    headerLeft: (
+      <TouchableOpacity
+        ml={30}
+        activeOpacity={0.5}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <ChevronLeft />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity mr={30} activeOpacity={0.5}>
+        <Adjust />
+      </TouchableOpacity>
+    )
+  });
 
   state = {
     value: 0.3

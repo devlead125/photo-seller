@@ -35,11 +35,25 @@ const packs = [
 ];
 
 export class ConfirmOrder extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: 'Select Packages',
-    headerLeft: <ChevronLeft marginLeft={25} />,
-    headerRight: <Adjust marginRight={25} />
-  };
+    headerLeft: (
+      <TouchableOpacity
+        ml={30}
+        activeOpacity={0.5}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <ChevronLeft />
+      </TouchableOpacity>
+    ),
+    headerRight: (
+      <TouchableOpacity mr={30} activeOpacity={0.5}>
+        <Adjust />
+      </TouchableOpacity>
+    )
+  });
 
   state = {
     imgIndex: 0,
@@ -140,12 +154,8 @@ export class ConfirmOrder extends Component {
               </View>
             </View>
             <View mx={27} mt={19} flexDirection="row">
-              <Text fontWeight="bold" fontSize={24}>
-                Total
-              </Text>
-              <Text fontWeight="bold" fontSize={24}>
-                $96.00
-              </Text>
+              <Text fontSize={24}>Total</Text>
+              <Text fontSize={24}>$96.00</Text>
             </View>
             <Card px={26} py={24} mt={19} alignItems="center" flexDirection="row">
               <Text fontSize={18} color="grey">
@@ -159,8 +169,10 @@ export class ConfirmOrder extends Component {
               </TouchableOpacity>
             </Card>
             <View mt={35} flexDirection="row">
-              <Button flex={1}>PLACE</Button>
-              <Button flex={1} ml={8}>
+              <Button flex={1} onPress={() => this.setState({ modalVisible: true })}>
+                PLACE
+              </Button>
+              <Button flex={1} ml={8} onPress={() => this.setState({ modalVisible: true })}>
                 SAVE
               </Button>
             </View>

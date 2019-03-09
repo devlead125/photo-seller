@@ -78,13 +78,13 @@ export class AddCustomerModal extends Component {
                 </Text>
                 <View mt={15} flexDirection="row" justifyContent="flex-start" alignItems="center">
                   <Image source={require('../../assets/apple-pay.png')} />
-                  <Text ml={15} fontWeight="bold" fontSize={12}>
+                  <Text ml={15} fontSize={12}>
                     Apple Pay
                   </Text>
                 </View>
                 <View mt={9} flexDirection="row" justifyContent="flex-start" alignItems="center">
                   <Image source={require('../../assets/card-pay.png')} />
-                  <Text ml={15} fontWeight="bold" fontSize={12}>
+                  <Text ml={15} fontSize={12}>
                     Card Ending **96
                   </Text>
                 </View>

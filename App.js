@@ -10,8 +10,8 @@ import theme from './theme';
 
 const rootNavigator = createStackNavigator(
   {
-    EditPhoto,
     FlagPhotos,
+    EditPhoto,
     SelectPackages,
     ConfirmOrder
   },

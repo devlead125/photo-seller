@@ -32,8 +32,22 @@ export class FlagPhotos extends Component {
     const { state } = navigation;
     return {
       title: R.propOr('Flag Photos', 'title', state.params),
-      headerLeft: <ChevronLeft marginLeft={25} />,
-      headerRight: <Adjust marginRight={25} />
+      headerLeft: (
+        <TouchableOpacity
+          ml={30}
+          activeOpacity={0.5}
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
+          <ChevronLeft />
+        </TouchableOpacity>
+      ),
+      headerRight: (
+        <TouchableOpacity mr={30} activeOpacity={0.5}>
+          <Adjust />
+        </TouchableOpacity>
+      )
     };
   };
 
