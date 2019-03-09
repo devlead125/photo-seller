@@ -2,12 +2,26 @@ import React from 'react';
 import { Font, AppLoading, Asset } from 'expo';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import ConfirmOrder from './screens/ConfirmOrder';
+import SelectPackages from './screens/SelectPackages';
+import theme from './theme';
 
 const rootNavigator = createStackNavigator(
   {
-    ConfirmOrder
+    ConfirmOrder,
+    SelectPackages
   },
-  {}
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: theme.colors.primary
+      },
+      headerTitleStyle: {
+        color: '#ffffff',
+        textAlign: 'center',
+        flex: 1
+      }
+    }
+  }
 );
 
 const AppContainer = createAppContainer(rootNavigator);

@@ -9,7 +9,7 @@ export const setDesignWidth = width => {
 };
 
 export const getDp = val =>
-  typeof val === 'number' ? (val / designWidth) * Dimensions.get('window').width : val;
+  typeof val === 'number' ? `${(val / designWidth) * Dimensions.get('window').width}px` : val;
 
 export const space = props => css`
   ${props.mt != null && `margin-top: ${getDp(props.mt)};`}
