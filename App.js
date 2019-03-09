@@ -5,12 +5,14 @@ import { ThemeProvider } from 'styled-components';
 import FlagPhotos from './screens/FlagPhotos';
 import ConfirmOrder from './screens/ConfirmOrder';
 import SelectPackages from './screens/SelectPackages';
+import EditPhoto from './screens/EditPhoto';
 import theme from './theme';
 
 const rootNavigator = createStackNavigator(
   {
-    SelectPackages,
+    EditPhoto,
     FlagPhotos,
+    SelectPackages,
     ConfirmOrder
   },
   {
@@ -40,7 +42,8 @@ export default class App extends React.Component {
         require('./assets/apple-pay.png'),
         require('./assets/card-pay.png'),
         require('./assets/1.png'),
-        require('./assets/2.png')
+        require('./assets/2.png'),
+        require('./assets/3.png')
       ]),
       Font.loadAsync({
         lato: require('./assets/lato.ttf'),

@@ -44,7 +44,7 @@ export class ConfirmOrder extends Component {
   state = {
     imgIndex: 0,
     packIndex: 0,
-    modalVisible: true
+    modalVisible: false
   };
 
   render() {

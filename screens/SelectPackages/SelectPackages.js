@@ -75,6 +75,7 @@ export class SelectPackages extends Component {
 
   render() {
     const { packIndex, tabIndex } = this.state;
+    const { navigation } = this.props;
     return (
       <ScrollView flex={1}>
         <View flexDirection="row">
@@ -158,12 +159,62 @@ export class SelectPackages extends Component {
                   title="Photo Package 1"
                   detail="[x2] 8X6 [x2] 7X5"
                   elevation={0}
+                  borderRadius={0}
+                  extra={<Add />}
+                />
+                <TitleDetailCard
+                  title="Photo Package 2"
+                  detail="[x2] 8X12 [x2] 8X6 [x2] 8X5"
+                  elevation={0}
+                  bg="lightGrey"
+                  borderRadius={0}
+                  extra={<Add />}
+                />
+                <TitleDetailCard
+                  title="Photo Package 3"
+                  detail="[x1] Frame  8X12 [x1] 8X12"
+                  elevation={0}
+                  borderRadius={0}
+                  extra={<Add />}
+                />
+                <TitleDetailCard
+                  title="Photo Package 4"
+                  detail="[x1] Frame  8X12 [x1] 8X12"
+                  elevation={0}
+                  bg="lightGrey"
+                  borderRadius={0}
                   extra={<Add />}
                 />
               </>
             ) : (
-              <></>
+              <>
+                <Text mt={25} fontSize={24}>
+                  Individual Options
+                </Text>
+                <Text color="grey" fontSize={18}>
+                  Select 1 or multiple extras
+                </Text>
+                <View px={25} py={17} flexDirection="row" alignItems="center">
+                  <Text>Framed 8X12</Text>
+                  <Add />
+                </View>
+                <View px={25} py={17} flexDirection="row" alignItems="center" bg="lightGrey">
+                  <Text>Single 8X12</Text>
+                  <Add />
+                </View>
+                <View px={25} py={17} flexDirection="row" alignItems="center">
+                  <Text>Single 8X6</Text>
+                  <Add />
+                </View>
+                <View px={25} py={17} flexDirection="row" alignItems="center" bg="lightGrey">
+                  <Text>Single 7X5</Text>
+                  <Add />
+                </View>
+              </>
             )}
+            <Button mx={50} mt={64} onPress={() => navigation.navigate('ConfirmOrder')}>
+              CHECK-OUT
+            </Button>
           </View>
         </View>
       </ScrollView>

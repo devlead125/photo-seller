@@ -100,7 +100,7 @@ export class FlagPhotos extends Component {
           alignSelf="center"
           bottom={50}
           w={239}
-          onPress={() => navigation.navigate('SelectePackages')}
+          onPress={() => navigation.navigate('SelectPackages')}
         >
           SELECT PACKAGES
         </Button>
