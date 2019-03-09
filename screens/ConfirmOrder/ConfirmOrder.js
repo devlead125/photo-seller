@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import { Icon } from 'expo';
-import PropTypes from 'prop-types';
 import View from '../../components/View';
 import TouchableOpacity from '../../components/TouchableOpacity';
 import Card from '../../components/Card';
@@ -45,7 +44,7 @@ export class ConfirmOrder extends Component {
   state = {
     imgIndex: 0,
     packIndex: 0,
-    modalVisible: false
+    modalVisible: true
   };
 
   render() {
@@ -56,7 +55,7 @@ export class ConfirmOrder extends Component {
           <View flex={1} flexDirection="row" flexWrap="wrap" py={25} px={15}>
             {imgs.map((img, index) => (
               <TouchableOpacity
-                key={img}
+                key={Math.random()}
                 w="50%"
                 px={10}
                 mb={20}
@@ -170,6 +169,7 @@ export class ConfirmOrder extends Component {
         <AddCustomerModal
           isVisible={modalVisible}
           onBackdropPress={() => this.setState({ modalVisible: false })}
+          onAddCustomer={() => {}}
         />
       </ScrollView>
     );

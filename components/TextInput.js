@@ -11,13 +11,13 @@ const TextInput = styled.TextInput`
 `;
 
 TextInput.defaultProps = {
-  fontSize: 15,
-  fontFamily: 'lars-regular',
-  color: 'black',
-  p: 12,
+  fontSize: 12,
+  px: 24,
+  py: 9,
   borderRadius: 4,
   border: 1,
-  borderColor: 'grey'
+  borderColor: 'lightGrey',
+  fontFamily: 'nunito'
 };
 
 export default TextInput;

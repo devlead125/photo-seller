@@ -2,12 +2,14 @@ import React from 'react';
 import { Font, AppLoading, Asset } from 'expo';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { ThemeProvider } from 'styled-components';
+import FlagPhotos from './screens/FlagPhotos';
 import ConfirmOrder from './screens/ConfirmOrder';
 import SelectPackages from './screens/SelectPackages';
 import theme from './theme';
 
 const rootNavigator = createStackNavigator(
   {
+    FlagPhotos,
     ConfirmOrder,
     SelectPackages
   },
@@ -34,7 +36,12 @@ export default class App extends React.Component {
 
   loadAssets = async () => {
     await Promise.all([
-      Asset.loadAsync([require('./assets/1.png'), require('./assets/2.png')]),
+      Asset.loadAsync([
+        require('./assets/apple-pay.png'),
+        require('./assets/card-pay.png'),
+        require('./assets/1.png'),
+        require('./assets/2.png')
+      ]),
       Font.loadAsync({
         lato: require('./assets/lato.ttf'),
         nunito: require('./assets/nunito.ttf')
